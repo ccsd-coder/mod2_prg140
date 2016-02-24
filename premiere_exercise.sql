@@ -1,6 +1,7 @@
--- Question 10 (Official Way)
+-- Question 10 (Alternative Way, using the OR operator)
 -- --------------------------
-select part_num, description from part where class in ( 'AP', 'SG' );
+select part_num, description from part
+ where ( class = 'AP' ) or ( class = 'SG' );
 
 
 
