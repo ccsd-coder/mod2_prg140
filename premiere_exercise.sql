@@ -1,9 +1,12 @@
--- Question 15
+
+-- Question 16
 -- -----------
 
-select sum( balance ) from customer
- where ( rep_num = '65' ) and ( balance < credit_limit );
-
+select part_num, description, on_hand from part
+where ( 
+on_hand 
+>= ( select avg( on_hand ) from part )
+);
 
 
 
