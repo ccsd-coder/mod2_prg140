@@ -1,5 +1,10 @@
--- Question 14
+-- Question 15
 -- -----------
 
-select count( * ) from customer where ( balance >= credit_limit );
+select sum( balance ) from customer
+ where ( rep_num = '65' ) and ( balance < credit_limit );
+
+
+
+
 
