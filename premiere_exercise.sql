@@ -33,3 +33,4 @@
 -- where ( on_hand >= 10 ) && ( on_hand <= 25 );
 
 -- Q08
+-- And now, in the version, we are about to solve Q08
