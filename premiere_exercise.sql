@@ -1,7 +1,6 @@
+-- Question 10 (Official Way)
+-- --------------------------
+select part_num, description from part where class in ( 'AP', 'SG' );
 
- 
- -- Question 09
- select rep_num, last_name, first_name 
- from rep
- where rep_num in 
- ( select rep_num from customer where credit_limit = 10000 );
+
+
