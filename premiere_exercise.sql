@@ -1,7 +1,5 @@
--- Question 10 (Alternative Way, using the OR operator)
--- --------------------------
-select part_num, description from part
- where ( class = 'AP' ) or ( class = 'SG' );
-
-
+-- Question 11
+--------------
+select customer_num, customer_name from customer
+ where customer_name like 'B%';
 
