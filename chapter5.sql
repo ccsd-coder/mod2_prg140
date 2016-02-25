@@ -1,11 +1,10 @@
 -- Solving Chapter 5 - Premiere Problem
 -- ------------------------------------
 
--- Question 05 ( Using IN)
--- -----------
--- customer
--- orders
+-- Question 06
+--------------
 
- 
- select order_num from orders where customer_num IN
- ( select customer_num from orders where ( order_date = '2010-10-23' ) );
+select customer_num, customer_name
+from customer 
+where customer_num not in
+(select customer_num from orders where order_date = '2010-10-23');
