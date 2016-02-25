@@ -1,7 +1,7 @@
 -- Solving Chapter 5 - Premiere Problem
 -- ------------------------------------
 
--- Question 07
+-- Question 08
 -- -----------
 select
 	o.order_num,   -- From o OR ol
@@ -20,5 +20,8 @@ from
 	-- +   3 tables --> 2 JOINS
 	-- + (n) tables --> (n-1) JOINS
 where ( o.order_num = ol.order_num )
-and   ( ol.part_num = p.part_num );
+and   ( ol.part_num = p.part_num )
+
+order by p.class asc,     -- Regardless of how sub - orderings,
+         o.order_num asc; -- only use "order by" once
 
