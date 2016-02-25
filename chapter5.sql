@@ -1,8 +1,13 @@
 -- Solving Chapter 5 - Premiere Problem
 -- ------------------------------------
 
--- Question 03
+-- Question 04 ( Using a JOIN Query)
 -- -----------
-select o.order_num, o.order_date, ol.part_num,
- ol.num_ordered, ol.quoted_price from orders o,
- order_line ol where ( ol.order_num = o.order_num );
+-- customer
+-- orders
+
+select o.order_num, c.customer_name, o.order_date
+from customer c, orders o
+
+where ( c.customer_num = o.customer_num )
+ and (o.order_date = '2010-10-23');
