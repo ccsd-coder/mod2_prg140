@@ -1,27 +1,29 @@
 -- Solving Chapter 5 - Premiere Problem
 -- ------------------------------------
 
--- Question 08
+-- Question 09
 -- -----------
+
+-- 1) Identify tables
+--    * rep
+--    * customer
+
+-- 2) Find sub query first
+
+-- 3) Use the sub quey within the outer most query
 select
-	o.order_num,   -- From o OR ol
-	o.order_date,  -- From o
-	p.part_num,    -- From p
-	p.description, -- From p
-	p.class        -- From p
-
-from
-	orders o,
-	order_line ol,
-	part p
+	rep_num,
+	last_name,
+	first_name
 	
-	-- Remember:
-	-- +   2 tables --> 1 JOIN
-	-- +   3 tables --> 2 JOINS
-	-- + (n) tables --> (n-1) JOINS
-where ( o.order_num = ol.order_num )
-and   ( ol.part_num = p.part_num )
+from
+	rep
+	
+where rep_num in 
+	(
+		select rep_num
+		from customer
+		where credit_limit = 10000
+	);
 
-order by p.class asc,     -- Regardless of how sub - orderings,
-         o.order_num asc; -- only use "order by" once
 
